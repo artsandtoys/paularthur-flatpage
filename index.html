@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Global Reset */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+
+        /* Layout Containers */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* 1. Header & Navbar Centered */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        nav { margin-top: 20px; }
+        nav a { color: #04AA6D; margin: 0 15px; text-decoration: none; font-weight: bold; }
+
+        /* 2. Column Logic (Flexbox) */
+        .row {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Aligning the Content */
+        .content-center { justify-content: center; text-align: center; }
+        .content-left   { justify-content: flex-start; text-align: left; }
+        .content-right  { justify-content: flex-end; text-align: right; }
+
+        /* The actual text box inside the columns */
+        .column {
+            flex: 0 0 60%; /* Each column takes up 60% of the width */
+            padding: 20px;
+        }
+
+        /* 3. Footer */
+        footer {
+            background: #eee;
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .column { flex: 0 0 100%; text-align: center; }
+            .row { justify-content: center; }
+        }
+        
+        /* Visual spacing */
+        section:nth-child(even) { background-color: #f9f9f9; }
+        h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>BRAND NAME</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="container">
+    <div class="row content-center">
+        <div class="column">
+            <h2>Centered Focus</h2>
+            <p>This is your first centered section. It's great for mission statements or big announcements. It stays right in the middle.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row content-left">
+        <div class="column">
+            <h2>Aligned Left</h2>
+            <p>Now we shift to the left. This creates that "asymmetric" feel found on modern portfolio sites. The right side remains empty to let the design breathe.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row content-center">
+        <div class="column">
+            <h2>Back to Center</h2>
+            <p>Breaking up the alignment keeps the user engaged. It forces the eye to reset to the middle of the screen.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row content-right">
+        <div class="column">
+            <h2>Aligned Right</h2>
+            <p>Finally, we push the content to the right. On mobile, our media query will automatically snap this back to the center for better readability.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Your Website. Built with Flexbox.</p>
+</footer>
+
+</body>
+</html>
